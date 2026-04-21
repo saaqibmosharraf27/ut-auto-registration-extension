@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "UT Auto Register",
+  "version": "1.0",
+  "description": "Auto-register UT Austin courses at maximum speed",
+  "permissions": ["storage"],
+  "host_permissions": ["https://utdirect.utexas.edu/*"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": { "48": "icons/icon48.png" }
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://utdirect.utexas.edu/*"],
+      "js": ["content/capture.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://utdirect.utexas.edu/*"],
+      "js": ["content/register.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

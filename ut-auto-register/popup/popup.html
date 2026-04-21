@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UT Auto Register</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>UT Auto Register</h1>
+
+    <label for="courseInput">Unique Numbers (one per line)</label>
+    <textarea id="courseInput"
+              placeholder="12345&#10;67890&#10;11223"
+              rows="6"
+              spellcheck="false"></textarea>
+
+    <div class="actions">
+      <button id="registerBtn" class="btn-primary">Register Now</button>
+      <button id="saveBtn"     class="btn-secondary">Save</button>
+    </div>
+
+    <div id="status" class="status hidden"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
